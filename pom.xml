@@ -59,6 +59,14 @@
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-resteasy-jsonb</artifactId>
 		</dependency>
+		<dependency><!-- driver do mysql vindo como extensão do quarkus -->
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-jdbc-mysql</artifactId>
+		</dependency>
+		<dependency><!-- driver do mysql vindo como extensão do quarkus -->
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-hibernate-orm-panache</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
