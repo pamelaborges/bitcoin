@@ -19,3 +19,5 @@ CREATE TABLE `BitcoinOrder` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`user_id`) REFERENCES `User` (`id`)
 ) ENGINE = InnoDB;
+
+ALTER TABLE User ADD COLUMN role VARCHAR(55);

@@ -68,6 +68,11 @@
 			<artifactId>quarkus-hibernate-orm-panache</artifactId>
 		</dependency>
 		
+			<dependency><!-- extensão de seguranca -->
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-security-jpa</artifactId>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>
