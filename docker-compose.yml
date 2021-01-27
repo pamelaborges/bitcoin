@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  bitcoin-jvm:
+    image: quarkus/bitcoint-jvm:latest
+    build:
+      context: ./
+      dockerfile: src/main/docker/Dockerfile.jvm
+    environment:
+      DATASOURCE_URL: jdbc:mysql://mysql-bitcoin:3306/bitcoin?autoReconnect=true
+    networks:
+      - mysql-db
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql-bitcoin
+
+  mysql-bitcoin:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: bitcoinapp
+      MYSQL_DATABASE: bitcoin
+      MYSQL_USER: bitcoinapp
+    networks:
+      - mysql-db
+    ports:
+      - 3307:3306
+    volumes:
+      - ./src/main/resources/init-db.sql:/docker-entrypoint-initdb.d/1.sql
+      - mysql.bitcoin:/var/lib/mysql
+    command: --init-file /docker-entrypoint-initdb.d/1.sql
+
+networks:
+    mysql-db:
+      driver: bridge
+
+volumes:
+  mysql.bitcoin:

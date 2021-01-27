@@ -1,7 +1,5 @@
-CREATE DATABASE bitcoin;
-SHOW DATABASES;
 USE bitcoin;
-CREATE TABLE `User` (
+CREATE TABLE IF NOT EXISTS `User` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(50) NOT NULL,
 	`cpf` VARCHAR(14) NOT NULL,
@@ -9,7 +7,7 @@ CREATE TABLE `User` (
 	`password` VARCHAR(100) NOT NULL,
 	PRIMARY KEY(`id`)) ENGINE=InnoDB;
 	
-CREATE TABLE `BitcoinOrder` (
+CREATE TABLE IF NOT EXISTS `BitcoinOrder` (
   `id` int NOT NULL AUTO_INCREMENT,
   `price` decimal(6, 2) NOT NULL,
   `type_order` VARCHAR(20) NOT NULL,
