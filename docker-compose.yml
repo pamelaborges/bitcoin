@@ -8,6 +8,9 @@ services:
       dockerfile: src/main/docker/Dockerfile.jvm
     environment:
       DATASOURCE_URL: jdbc:mysql://mysql-bitcoin:3306/bitcoin?autoReconnect=true
+      DATASOURCE_USERNAME: bitcoinapp
+      DATASOURCE_PASSWORD: bitcoinapp
+      KIND: mysql
     networks:
       - mysql-db
     ports:
