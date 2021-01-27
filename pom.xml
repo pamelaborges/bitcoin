@@ -68,9 +68,20 @@
 			<artifactId>quarkus-hibernate-orm-panache</artifactId>
 		</dependency>
 		
-			<dependency><!-- extensão de seguranca -->
+		<dependency><!-- extensão de seguranca -->
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-security-jpa</artifactId>
+		</dependency>
+		
+		<dependency><!-- extensão do para mockar metodos staticos do panach -->
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-panache-mock</artifactId>
+		</dependency>
+		
+		
+		<dependency><!-- extensão do para mockar metodos staticos do panach -->
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-junit5-mockito</artifactId>
 		</dependency>
 		
 	</dependencies>

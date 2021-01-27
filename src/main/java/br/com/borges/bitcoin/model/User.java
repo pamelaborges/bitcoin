@@ -1,5 +1,6 @@
 package br.com.borges.bitcoin.model;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -69,6 +70,7 @@ public class User extends PanacheEntityBase {
 		return username;
 	}
 
+	@JsonbTransient
 	public String getPassword() {
 		return password;
 	}
@@ -77,6 +79,11 @@ public class User extends PanacheEntityBase {
 		this.role = role;
 	}
 	
+	
+	public String getRole() {
+		return role;
+	}
+
 	public static void insert (User user) {
 		user.password = BcryptUtil.bcryptHash(user.password);
 		User.persist(user);
